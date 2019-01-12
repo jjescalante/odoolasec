@@ -15,7 +15,7 @@
                         <field name="description"/>
                     </page>
                     <page string="Reports">
-                        <!-- <field name="invoice_ids"/> bloq report -->
+                        <field name="invoice_ids"/>
                     </page>
                 </notebook>
             </form>
@@ -60,7 +60,7 @@
     <menuitem name="Reports" id="reports_menu" parent="lasec_menu" action="invoice_list_action"/>
 
     <!-- Session form view -->
-    <!--<record model="ir.ui.view" id="report_form_view">
+    <record model="ir.ui.view" id="report_form_view">
         <field name="name">report.form</field>
         <field name="model">lasec.report</field>
         <field name="arch" type="xml">
