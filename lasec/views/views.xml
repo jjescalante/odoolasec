@@ -42,7 +42,6 @@
         </field>
     </record>
 
-
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="invoice_list_action">
         <field name="name">Invoices</field>
@@ -57,7 +56,7 @@
     <menuitem name="LASEC" id="main_lasec_menu"/>
     <!-- menu categories -->
     <menuitem name="LASEC" id="lasec_menu" parent="main_lasec_menu"/>
-    <menuitem name="Reports" id="reports_menu" parent="lasec_menu" action="invoice_list_action"/>
+    <menuitem name="Reports" id="reports_menu" parent="lasec_menu"/>
 
     <!-- Session form view -->
     <record model="ir.ui.view" id="report_form_view">
@@ -117,6 +116,63 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+	<!--accounts form view -->
+    <record model="ir.ui.view" id="accounts_form_view">
+        <field name="name">accounts.form</field>
+        <field name="model">lasec.accounts</field>
+        <field name="arch" type="xml">
+            <form string="Accounts Form">
+                <sheet>
+                    <group>
+                        <field name="company"/>
+                        <field name="invoice_date"/>
+                        <field name="invoice"/>
+                        <field name="description"/>
+                        <field name="amount"/>
+                        <field name="currency"/>
+                        <field name="total"/>
+                        <field name="not_expired"/>
+                        <field name="zero"/>
+                        <field name="thirty"/>
+                        <field name="sixty"/>
+                        <field name="ninety"/>
+                        <field name="more_one_hundred"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="accounts_tree_view">
+        <field name="name">accounts.tree</field>
+        <field name="model">lasec.accounts</field>
+        <field name="arch" type="xml">
+            <tree string="Accounts Tree">
+                    <field name="company"/>
+                    <field name="invoice_date"/>
+                    <field name="invoice"/>
+                    <field name="description"/>
+                    <field name="amount"/>
+                    <field name="currency"/>
+                    <field name="total"/>
+                    <field name="not_expired"/>
+                    <field name="zero"/>
+                    <field name="thirty"/>
+                    <field name="sixty"/>
+                    <field name="ninety"/>
+                    <field name="more_one_hundred"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="accounts_list_action">
+        <field name="name">accounts</field>
+        <field name="res_model">lasec.accounts</field>
+        <field name="view_mode">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
     <menuitem name="Invoices" id="invoices_menu" parent="reports_menu" action="report_list_action"/>
--->
+    <menuitem name="Debts to pay" id="accounts_menu" parent="reports_menu" action="report_list_action"/>
+	<menuitem name="Accounts receivable" id="account_menu" parent="reports_menu" action="accounts_list_action"/>
+
 </odoo>

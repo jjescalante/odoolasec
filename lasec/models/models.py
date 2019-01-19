@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api
 
+
 class Invoice(models.Model):
     _name = 'lasec.invoice'
 
@@ -32,3 +33,38 @@ class Report(models.Model):
     def _value(self):
         for record in self.filtered(lambda r: r.unit):
             record.value = record.unit_cost * record.unit
+
+
+class accounts(models.Model):
+    _name = 'lasec.accounts'
+
+    company = fields.Char(requires=True)
+    invoice_date = fields.Date()
+    invoice = fields.Char(required=True)
+    description = fields.Text()
+    amount = fields.Float(digits=(12, 2))
+    currency = fields.Char(required=True)
+    total = fields.Float(digits=(12, 2))
+    not_expired = fields.Float(digits=(12, 2))
+    zero = fields.Float(digits=(12, 2))
+    thirty = fields.Float(digits=(12, 2))
+    sixty = fields.Float(digits=(12, 2))
+    ninety = fields.Float(digits=(12, 2))
+    more_one_hundred = fields.Float(digits=(12, 2))
+
+# class account(models.Model):
+#    _name = 'lasec.account'
+
+#    company = fields.Char(requires=True)
+#    invoice_date = fields.Date()
+#    invoice = fields.Char(required=True)
+#    description = fields.Text()
+#    amount = fields.Float(digits=(12, 2))
+#    currency = fields.Char(required=True)
+#    total = fields.Float(digits=(12, 2))
+#    not_expired = fields.Float(digits=(12, 2))
+#    zero = fields.Float(digits=(12, 2))
+#    thirty = fields.Float(digits=(12, 2))
+#    sixty = fields.Float(digits=(12, 2))
+#    ninety = fields.Float(digits=(12, 2))
+#    more_one_hundred = fields.Float(digits=(12, 2))
