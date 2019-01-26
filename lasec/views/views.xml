@@ -1,6 +1,6 @@
 <odoo>
     <!-- explicit list view definition -->
-   -<record model="ir.ui.view" id="invoice_form_view">
+    <record model="ir.ui.view" id="invoice_form_view">
         <field name="name">invoice.form</field>
         <field name="model">lasec.invoice</field>
         <field name="arch" type="xml">
@@ -58,7 +58,7 @@
     <menuitem name="LASEC" id="lasec_menu" parent="main_lasec_menu"/>
     <menuitem name="Reports" id="reports_menu" parent="lasec_menu"/>
 
-    <!-- Session form view -->
+    <!-- Reports form view -->
     <record model="ir.ui.view" id="report_form_view">
         <field name="name">report.form</field>
         <field name="model">lasec.report</field>
@@ -107,18 +107,20 @@
                 <field name="area"/>
             </tree>
         </field>
-    </record>
+	</record>
 
     <record model="ir.actions.act_window" id="report_list_action">
         <field name="name">Reports</field>
         <field name="res_model">lasec.report</field>
         <field name="view_mode">form</field>
         <field name="view_mode">tree,form</field>
-    </record>
+	</record>
+
+	<menuitem name="Invoices" id="invoices_menu" parent="reports_menu" action="report_list_action"/>
 
 	<!--accounts form view -->
-    <record model="ir.ui.view" id="accounts_form_view">
-        <field name="name">accounts.form</field>
+	<record model="ir.ui.view" id="accounts_form_view">
+	    <field name="name">accounts.form</field>
         <field name="model">lasec.accounts</field>
         <field name="arch" type="xml">
             <form string="Accounts Form">
@@ -165,14 +167,13 @@
     </record>
 
     <record model="ir.actions.act_window" id="accounts_list_action">
-        <field name="name">accounts</field>
+        <field name="name">Accounts</field>
         <field name="res_model">lasec.accounts</field>
         <field name="view_mode">form</field>
         <field name="view_mode">tree,form</field>
-    </record>
+	</record>-->
 
-    <menuitem name="Invoices" id="invoices_menu" parent="reports_menu" action="report_list_action"/>
-    <menuitem name="Debts to pay" id="accounts_menu" parent="reports_menu" action="report_list_action"/>
-	<menuitem name="Accounts receivable" id="account_menu" parent="reports_menu" action="accounts_list_action"/>
+    <menuitem name="Debts to pay" id="accounts_menu" parent="reports_menu" action="accounts_list_action"/>
+	<menuitem name="Accounts receivable" id="account_menu" parent="reports_menu" action="report_list_action"/>
 
 </odoo>

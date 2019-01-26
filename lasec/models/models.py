@@ -35,7 +35,7 @@ class Report(models.Model):
             record.value = record.unit_cost * record.unit
 
 
-class accounts(models.Model):
+class Accounts(models.Model):
     _name = 'lasec.accounts'
 
     company = fields.Char(requires=True)
@@ -52,7 +52,7 @@ class accounts(models.Model):
     ninety = fields.Float(digits=(12, 2))
     more_one_hundred = fields.Float(digits=(12, 2))
 
-# class account(models.Model):
+# class Account(models.Model):
 #    _name = 'lasec.account'
 
 #    company = fields.Char(requires=True)
