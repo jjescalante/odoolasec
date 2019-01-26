@@ -9,6 +9,8 @@ class Invoice(models.Model):
     name = fields.Char(string="Report", required=True)
     description = fields.Text()
     invoice_ids = fields.One2many('lasec.report', 'report_id')
+    debts_pay = fields.One2many('lasec.accounts', 'report2_id')
+    accounts = fields.One2many('lasec.account', 'report3_id')
 
 class Report(models.Model):
     _name = 'lasec.report'
@@ -51,6 +53,8 @@ class Accounts(models.Model):
     sixty = fields.Float(digits=(12, 2))
     ninety = fields.Float(digits=(12, 2))
     more_one_hundred = fields.Float(digits=(12, 2))
+    report2_id = fields.Many2one('lasec.invoice', ondelete='cascade', required=True)
+
 
 class Account(models.Model):
     _name = 'lasec.account'
@@ -68,3 +72,4 @@ class Account(models.Model):
     sixty = fields.Float(digits=(12, 2))
     ninety = fields.Float(digits=(12, 2))
     more_one_hundred = fields.Float(digits=(12, 2))
+    report3_id = fields.Many2one('lasec.invoice', ondelete='cascade', required=True)
