@@ -171,9 +171,65 @@
         <field name="res_model">lasec.accounts</field>
         <field name="view_mode">form</field>
         <field name="view_mode">tree,form</field>
-	</record>-->
+	</record>
 
-    <menuitem name="Debts to pay" id="accounts_menu" parent="reports_menu" action="accounts_list_action"/>
-	<menuitem name="Accounts receivable" id="account_menu" parent="reports_menu" action="report_list_action"/>
+	<menuitem name="Debts to pay" id="accounts_menu" parent="reports_menu" action="accounts_list_action"/>
+
+	<!--account form view -->
+	<record model="ir.ui.view" id="account_form_view">
+	    <field name="name">account.form</field>
+        <field name="model">lasec.account</field>
+        <field name="arch" type="xml">
+            <form string="Account Form">
+                <sheet>
+                    <group>
+                        <field name="company"/>
+                        <field name="invoice_date"/>
+                        <field name="invoice"/>
+                        <field name="description"/>
+                        <field name="amount"/>
+                        <field name="currency"/>
+                        <field name="total"/>
+                        <field name="not_expired"/>
+                        <field name="zero"/>
+                        <field name="thirty"/>
+                        <field name="sixty"/>
+                        <field name="ninety"/>
+                        <field name="more_one_hundred"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="account_tree_view">
+        <field name="name">account.tree</field>
+        <field name="model">lasec.account</field>
+        <field name="arch" type="xml">
+            <tree string="Account Tree">
+                    <field name="company"/>
+                    <field name="invoice_date"/>
+                    <field name="invoice"/>
+                    <field name="description"/>
+                    <field name="amount"/>
+                    <field name="currency"/>
+                    <field name="total"/>
+                    <field name="not_expired"/>
+                    <field name="zero"/>
+                    <field name="thirty"/>
+                    <field name="sixty"/>
+                    <field name="ninety"/>
+                    <field name="more_one_hundred"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="account_list_action">
+        <field name="name">Account</field>
+        <field name="res_model">lasec.account</field>
+        <field name="view_mode">form</field>
+        <field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem name="Accounts receivable" id="account_menu" parent="reports_menu" action="account_list_action"/>
 
 </odoo>

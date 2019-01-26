@@ -52,19 +52,19 @@ class Accounts(models.Model):
     ninety = fields.Float(digits=(12, 2))
     more_one_hundred = fields.Float(digits=(12, 2))
 
-# class Account(models.Model):
-#    _name = 'lasec.account'
+class Account(models.Model):
+    _name = 'lasec.account'
 
-#    company = fields.Char(requires=True)
-#    invoice_date = fields.Date()
-#    invoice = fields.Char(required=True)
-#    description = fields.Text()
-#    amount = fields.Float(digits=(12, 2))
-#    currency = fields.Char(required=True)
-#    total = fields.Float(digits=(12, 2))
-#    not_expired = fields.Float(digits=(12, 2))
-#    zero = fields.Float(digits=(12, 2))
-#    thirty = fields.Float(digits=(12, 2))
-#    sixty = fields.Float(digits=(12, 2))
-#    ninety = fields.Float(digits=(12, 2))
-#    more_one_hundred = fields.Float(digits=(12, 2))
+    company = fields.Char(requires=True)
+    invoice_date = fields.Date()
+    invoice = fields.Char(required=True)
+    description = fields.Text()
+    amount = fields.Float(digits=(12, 2))
+    currency = fields.Char(required=True)
+    total = fields.Float(digits=(12, 2))
+    not_expired = fields.Float(digits=(12, 2))
+    zero = fields.Float(digits=(12, 2))
+    thirty = fields.Float(digits=(12, 2))
+    sixty = fields.Float(digits=(12, 2))
+    ninety = fields.Float(digits=(12, 2))
+    more_one_hundred = fields.Float(digits=(12, 2))
