@@ -171,13 +171,13 @@
         <field name="res_model">lasec.accounts</field>
         <field name="view_mode">form</field>
         <field name="view_mode">tree,form</field>
-	</record>
+    </record>
 
-	<menuitem name="Debts to pay" id="accounts_menu" parent="reports_menu" action="accounts_list_action"/>
+    <menuitem name="Debts to pay" id="accounts_menu" parent="reports_menu" action="accounts_list_action"/>
 
-	<!--account form view -->
-	<record model="ir.ui.view" id="account_form_view">
-	    <field name="name">account.form</field>
+	<!--account form view-->
+    <record model="ir.ui.view" id="account_form_view">
+        <field name="name">account.form</field>
         <field name="model">lasec.account</field>
         <field name="arch" type="xml">
             <form string="Account Form">
@@ -230,6 +230,6 @@
         <field name="view_mode">tree,form</field>
 	</record>
 
-	<menuitem name="Accounts receivable" id="account_menu" parent="reports_menu" action="account_list_action"/>
+    <menuitem name="Accounts receivable" id="account_menu" parent="reports_menu" action="account_list_action"/>
 
 </odoo>
