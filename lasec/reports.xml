@@ -1,0 +1,86 @@
+<odoo>
+
+    <report
+        id="report_session"
+        model="lasec.report"
+        string="Inventory Report"
+        name="lasec.report_inventory_view"
+        file="lasec.report_inventory"
+        report_type="qweb-pdf"/>
+
+    <template id="report_inventory_view">
+		<t t-foreach="docs" t-as="doc">
+			<t t-call="web.external_layout">
+			 	<div class="html">
+ 					<h4>Inventory Report:</h4>
+					<ul>
+						<t t-foreach="doc.report_id" t-as="report">
+							<body>
+							<li><span t-field="report.name"/></li>
+							<table>
+								<tr>
+									<td><strong>Accounting account: </strong></td>
+									<td><strong><h4 t-field="doc.accounting_account"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Warehouse: </strong></td>
+									<td><strong><h4 t-field="doc.warehouse"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Location: </strong></td>
+									<td><strong><h4 t-field="doc.location"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Item: </strong></td>
+									<td><strong><h4 t-field="doc.item"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Description item: </strong></td>
+									<td><strong><h4 t-field="doc.description_item"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Posting date: </strong></td>
+									<td><strong><h4 t-field="doc.posting_date"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Invoice date: </strong></td>
+									<td><strong><h4 t-field="doc.invoice_date"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Antiquity: </strong></td>
+									<td><strong><h4 t-field="doc.antiquity"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Unit measure: </strong></td>
+									<td><strong><h4 t-field="doc.unit_measure"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Unit: </strong></td>
+									<td><strong><h4 t-field="doc.unit"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Unit cost: </strong></td>
+									<td><strong><h4 t-field="doc.unit_cost"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Value: </strong></td>
+									<td><strong><h4 t-field="doc.value"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Type: </strong></td>
+									<td><strong><h4 t-field="doc.type"/></strong></td>
+								</tr>
+								<tr>
+									<td><strong>Area: </strong></td>
+									<td><strong><h4 t-field="doc.area"/></strong></td>
+								</tr>
+							</table>
+							</body>
+						</t>
+			    	</ul>
+				</div>
+			</t>
+		</t>
+    </template>
+
+</odoo>
