@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 from odoo import models, fields, api
 
 
@@ -29,7 +30,9 @@ class Report(models.Model):
     value = fields.Float(digits=(12, 2), compute='_value', store=True)
     type = fields.Char(required=True)
     area = fields.Char(required=True)
-    report_id = fields.Many2one('lasec.invoice', ondelete='cascade', required=True)
+    report_id = fields.Many2one('lasec.invoice',
+								 ondelete='cascade',
+                                 required=True)
 
     @api.depends('unit', 'unit_cost')
     def _value(self):
@@ -53,7 +56,9 @@ class Accounts(models.Model):
     sixty = fields.Float(digits=(12, 2))
     ninety = fields.Float(digits=(12, 2))
     more_one_hundred = fields.Float(digits=(12, 2))
-    report2_id = fields.Many2one('lasec.invoice', ondelete='cascade', required=True)
+    report2_id = fields.Many2one('lasec.invoice',
+								  ondelete='cascade',
+								  required=True)
 
 
 class Account(models.Model):
@@ -72,4 +77,6 @@ class Account(models.Model):
     sixty = fields.Float(digits=(12, 2))
     ninety = fields.Float(digits=(12, 2))
     more_one_hundred = fields.Float(digits=(12, 2))
-    report3_id = fields.Many2one('lasec.invoice', ondelete='cascade', required=True)
+    report3_id = fields.Many2one('lasec.invoice',
+								  ondelete='cascade',
+								  required=True)
