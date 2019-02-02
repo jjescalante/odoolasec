@@ -12,6 +12,7 @@
 
     'author': "My Company",
     'website': "http://www.yourcompany.com",
+
     # Categories can be used to filter modules in modules listing
     # for the full list
     'category': 'Uncategorized',
