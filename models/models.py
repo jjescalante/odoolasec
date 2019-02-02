@@ -77,5 +77,5 @@ class Account(models.Model):
     ninety = fields.Float(digits=(12, 2))
     more_one_hundred = fields.Float(digits=(12, 2))
     report3_id = fields.Many2one('lasec.invoice',
-								  ondelete='cascade',
-								  required=True)
+								 ondelete='cascade',
+								 required=True)
