@@ -1,5 +1,5 @@
 <odoo>
-    <report
+<report
         id="report_session"
         model="lasec.report"
         string="Inventory Report"
@@ -7,7 +7,7 @@
         file="lasec.report_inventory"
         report_type="qweb-pdf"/>
 
-    <template id="report_inventory_view">
+<template id="report_inventory_view">
     <t t-foreach="docs" t-as="doc">
 		<t t-call="web.external_layout">
 		 	<div class="html">
@@ -80,5 +80,5 @@
 			</div>
 		</t>
 	</t>
-    </template>
+</template>
 </odoo>
