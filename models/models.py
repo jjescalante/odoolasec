@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 
 class Invoice(models.Model):
@@ -27,7 +25,7 @@ class Report(models.Model):
     unit_measure = fields.Char(required=True)
     unit = fields.Integer()
     unit_cost = fields.Float(digits=(7, 2))
-    value = fields.Float(digits=(12, 2), compute='_value', store=True)
+    value = fields.Float(digits=(12, 2), _compute='_value', store=True)
     type = fields.Char(required=True)
     area = fields.Char(required=True)
     report_id = fields.Many2one('lasec.invoice',
