@@ -118,7 +118,6 @@
     <record model="ir.actions.act_window" id="report_list_action">
         <field name="name">Reports</field>
         <field name="res_model">lasec.report</field>
-        <field name="view_mode">form</field>
         <field name="view_mode">tree,form</field>
 	</record>
 
@@ -176,7 +175,6 @@
     <record model="ir.actions.act_window" id="accounts_list_action">
         <field name="name">Accounts</field>
         <field name="res_model">lasec.accounts</field>
-        <field name="view_mode">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 
@@ -234,7 +232,6 @@
     <record model="ir.actions.act_window" id="account_list_action">
         <field name="name">Account</field>
         <field name="res_model">lasec.account</field>
-        <field name="view_mode">form</field>
         <field name="view_mode">tree,form</field>
 	</record>
 
