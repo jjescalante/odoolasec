@@ -16,13 +16,13 @@
                     </page>
                     <page string="Reports">
                         <field name="invoice_ids"/>
-					</page>
-					<page string="Debts to pay">
-						<field name="debts_pay"/>
-					</page>
-					<page string="Accounts receivables">
-						<field name="accounts"/>
-					</page>
+                    </page>
+                    <page string="Debts to pay">
+                        <field name="debts_pay"/>
+                    </page>
+                    <page string="Accounts receivables">
+                        <field name="accounts"/>
+                    </page>
                 </notebook>
             </form>
         </field>
@@ -31,13 +31,13 @@
         <field name="name">invoice.list</field>
         <field name="model">lasec.invoice</field>
         <field name="arch" type="xml">
-			<tree string="Report Tree">
+            <tree string="Report Tree">
                 <field name="name" string="Reports"/>
                 <field name="description"/>
             </tree>
         </field>
-	</record>
-		<record model="ir.ui.view" id="report_search_view">
+    </record>
+        <record model="ir.ui.view" id="report_search_view">
         <field name="name">invoice.search</field>
         <field name="model">lasec.invoice</field>
         <field name="arch" type="xml">
@@ -46,7 +46,7 @@
                 <field name="description"/>
             </search>
         </field>
-	</record>
+    </record>
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="invoice_list_action">
@@ -113,19 +113,19 @@
                 <field name="area"/>
             </tree>
         </field>
-	</record>
+    </record>
 
     <record model="ir.actions.act_window" id="report_list_action">
         <field name="name">Reports</field>
         <field name="res_model">lasec.report</field>
         <field name="view_mode">tree,form</field>
-	</record>
+    </record>
 
-	<menuitem name="Invoices" id="invoices_menu" parent="reports_menu" action="report_list_action"/>
+    <menuitem name="Invoices" id="invoices_menu" parent="reports_menu" action="report_list_action"/>
 
-	<!--accounts form view -->
-	<record model="ir.ui.view" id="accounts_form_view">
-	    <field name="name">accounts.form</field>
+    <!--accounts form view -->
+    <record model="ir.ui.view" id="accounts_form_view">
+        <field name="name">accounts.form</field>
         <field name="model">lasec.accounts</field>
         <field name="arch" type="xml">
             <form string="Accounts Form">
@@ -143,8 +143,8 @@
                         <field name="thirty"/>
                         <field name="sixty"/>
                         <field name="ninety"/>
-						<field name="more_one_hundred"/>
-						<field name="report2_id"/>
+                        <field name="more_one_hundred"/>
+                        <field name="report2_id"/>
                     </group>
                 </sheet>
             </form>
@@ -180,7 +180,7 @@
 
     <menuitem name="Debts to pay" id="accounts_menu" parent="reports_menu" action="accounts_list_action"/>
 
-	<!--account form view-->
+    <!--account form view-->
     <record model="ir.ui.view" id="account_form_view">
         <field name="name">account.form</field>
         <field name="model">lasec.account</field>
@@ -200,8 +200,8 @@
                         <field name="thirty"/>
                         <field name="sixty"/>
                         <field name="ninety"/>
-						<field name="more_one_hundred"/>
-						<field name="report3_id"/>
+                        <field name="more_one_hundred"/>
+                        <field name="report3_id"/>
                     </group>
                 </sheet>
             </form>
@@ -233,7 +233,7 @@
         <field name="name">Account</field>
         <field name="res_model">lasec.account</field>
         <field name="view_mode">tree,form</field>
-	</record>
+    </record>
 
     <menuitem name="Accounts receivable" id="account_menu" parent="reports_menu" action="account_list_action"/>
 
