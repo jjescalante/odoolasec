@@ -14,7 +14,7 @@
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
-    # for the full list
+    # for the full list.
     'category': 'Uncategorized',
     'version': '0.1',
 
