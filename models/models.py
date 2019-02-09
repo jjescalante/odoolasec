@@ -1,7 +1,6 @@
 from odoo import models, fields, api, _
 
 
-
 class Invoice(models.Model):
     _name = 'lasec.invoice'
 
